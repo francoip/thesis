@@ -151,10 +151,7 @@ maybe in appendices
 \fi
 
       \subsection{Demonstration}
-<<<<<<< HEAD
-=======
       \label{sec:rachell_demo}
->>>>>>> public
       
       Several figures displaying the various steps of the attacks and
       their output are available. The use of the \prog{dos camp}
@@ -169,23 +166,23 @@ maybe in appendices
       tricks the \gls{ms} into considering that the location update is
       not required, as shown on \fref{fig:log_dos_camp2}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_dos_camp}
-        \caption{Using the \prog{dos camp} command to trick the mobile
-        into camping on \comp{Telenor}}
+        \caption{Using the \prog{dos camp} command: making the MS camp on
+        \comp{Telenor}.}
         \label{fig:mobile_dos_camp}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_camp0}
-        \caption{Using the \prog{dos camp} command: when no SIM is
-        inserted, the MS will camp on any cell.}
+        \caption{Using the \prog{dos camp} command: MS camps on any cell
+        if no SIM.}
         \label{fig:log_dos_camp0}
       \end{figure}
      
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_camp}
         \caption{Using the \prog{dos camp} command: using the soft SIM
@@ -193,7 +190,7 @@ maybe in appendices
         \label{fig:log_dos_camp}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_camp2}
         \caption{Using the \prog{dos camp} command: tricking the MS into
@@ -205,7 +202,7 @@ maybe in appendices
       command in the interface of the \prog{mobile} application to camp
       on the \comp{Netcom} network, and the use of the \prog{dos rach}
       command to send three Channel Request messages to this network.
-      Three messages does not constitute a \gls{dos}, but the point is
+      Three messages do not constitute a \gls{dos}, but the point is
       not to damage the networks. The logs of the mobile application
       show the effect of the command. \fref{fig:log_dos_rach} shows how
       the \gls{rr} sublayer leaves the idle mode and tries to establish
@@ -215,7 +212,7 @@ maybe in appendices
       messages sent by the network and containing the same \gls{rai},
       and shows how the \gls{ms} discards them.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_dos_rach}
         \caption{Using the \prog{dos rach} command: sending three Channel
@@ -223,7 +220,7 @@ maybe in appendices
         \label{fig:mobile_dos_rach}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_rach}
         \caption{Using the \prog{dos rach} command: the MS tries to
@@ -231,7 +228,7 @@ maybe in appendices
         \label{fig:log_dos_rach}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_rach2}
         \caption{Using the \prog{dos rach} command: the MS sends 3
@@ -239,7 +236,7 @@ maybe in appendices
         \label{fig:log_dos_rach2}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_rach3}
         \caption{Using the \prog{dos rach} command: the MS sees
@@ -249,7 +246,7 @@ maybe in appendices
       \end{figure}
 
       \iffalse
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_rach4}
         \caption{The MS sees Immediate Assignment messages with an RA
@@ -356,7 +353,7 @@ procedure!!!
       procedure fails, and how the timer was changed to
       \SI{60}{\second}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_dos_attach}
         \caption{Using the \prog{dos attach} command: sending Location
@@ -366,7 +363,7 @@ procedure!!!
       \end{figure}
 
       \iffalse
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_attach}
         \caption{Using the \prog{dos attach} to send a Location Updating
@@ -375,7 +372,7 @@ procedure!!!
       \end{figure}
       \fi
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_attach2}
         \caption{Using the \prog{dos attach} command: the location
@@ -385,7 +382,7 @@ procedure!!!
       \end{figure}
 
       \iffalse
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_attach3}
         \caption{Using the \prog{dos attach} command: the connection is
@@ -395,7 +392,7 @@ procedure!!!
       \end{figure}
       \fi
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_attach4}
         \caption{Using the \prog{dos attach} command: the location updating procedure failed, start again in
@@ -477,7 +474,7 @@ procedure!!!
       \comp{Telenor}, but is fake. \fref{fig:mobile_dos_detach} shows
       the message being sent with the specified \gls{imsi}.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_dos_detach}
         \caption{Using the \prog{dos detach} command: sending an IMSI
@@ -486,7 +483,7 @@ procedure!!!
         \label{fig:mobile_dos_detach}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{log_dos_detach}
         \caption{Using the \prog{dos detach} command: an IMSI

@@ -78,7 +78,7 @@
     uplink capture, can follow frequency hopping, has a very good
     demodulation, and is very inexpensive. 
 
-    \begin{figure}[h]
+    \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{typical_calypso_platform}
       \caption{Block diagram of a typical Calypso
@@ -221,7 +221,7 @@ converters.
     exploited to get location information for a given subscriber if an
     access to the network is available.
 
-    \subsection{Accessing the SS7 MAP protocol}
+    \subsection{Accessing the SS7}
 
       According to \name{James Moran}, the security director for the
       \gls{gsma}: \textquote{SS7 is inherently insecure, and it was
@@ -282,7 +282,7 @@ converters.
       country code, 47, belongs to Norway, and the identification code,
       92, belongs to \comp{Netcom}~\cite{nkom}.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{location}
         \caption{MSC number returned from an HLR query.}
@@ -300,7 +300,7 @@ converters.
       Thus, determining the \gls{msc} where the phone is located is only
       a first step to uncover the location of the targeted phone.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{location_te}
         \caption{Mapping between MSC numbers and
@@ -393,7 +393,7 @@ converters.
       networks reallocate the \gls{tmsi} too often, as discussed
       in~\Sref{sec:tmsi_realloc}.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_silent}
         \caption{Set TP-PID and TP-DCS fields using the patched
@@ -417,6 +417,7 @@ converters.
       decode it.
 
       \subsection{Capturing keystream and using \proj{Kraken}}
+      \label{sec:keystream_and_kraken}
 
       The first way of solving this problem makes two assumptions.
       Firstly, the encryption algorithm has to be A5/1 or A5/2, because
@@ -437,7 +438,7 @@ converters.
       can be found encrypted and unencrypted, as shown on
       \fref{fig:si5_keystream_ws}~\cite{nohl_gsm:_2009}.
 
-        \begin{figure}[h]
+        \begin{figure}
           \centering
           \includegraphics[width=\textwidth]{si5_keystream_ws}
           \caption{SI5 sent before and after the Ciphering Mode Command}

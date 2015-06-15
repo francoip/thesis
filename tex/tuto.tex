@@ -166,8 +166,10 @@ OsmocomBB# sms 1 +47123456 Example of silent SMS message
 
 \section{Usage of \prog{cell\_log}}
 
-This application can be used to determine the most suitable ARFCN in the
-vicinity.
+The \prog{mobile} application is not the only one available. The
+\prog{cell\_log} application can be used to determine the most suitable
+ARFCN in the vicinity. The following commands can be used after the two
+first steps described in the previous section.
 
       \begin{lstlisting}[language=bash, numbers=left,
 basicstyle=\footnotesize, breaklines=true, frame=single]
@@ -176,7 +178,7 @@ sudo src/host/layer23/src/misc/cell_log -l /tmp/cell_log
 less /tmp/cell_log
       \end{lstlisting}
 
-\section{Using the burst\_ind branch}
+\section{Using the \code{burst\_ind} branch}
 
 To use \proj{OsmocomBB} as a passive listener, as explained in
 \Sref{sec:passive_listener}, the \code{burst\_ind} branch needs to be

@@ -16,7 +16,7 @@ directly~\cite{3gpp_specifications_????,osmocombb_ms-side_????,osmocombb_2015}.
 As explained in~\Cref{chap:network_architecture}, the \gls{ms} is
 connected to the network through the Um interface, or air interface. The
 protocols on this interface are separated in three layers: the physical
-layer, or layer 1, the data link layer, or layer 2, and layer 3.
+layer, or layer 1, the data link layer, or layer 2, and the layer 3.
 Each will be investigated in turn in the following
 sections~\cite{3gpp_ts_2014-2}.
 %}
@@ -440,7 +440,7 @@ sections~\cite{3gpp_ts_2014-2}.
   provided as practical examples. Each line of the logs contains the
   file name, followed by the line number, and the message. For example:
   \code{gsm48\_rr.c:4820 Channel provides data}. This is an easy way to
-  find were a given procedure is implemented.The code of this
+  find were a given procedure is implemented. The code of this
   application can be found in the \code{src/host/layer23/src/mobile/}
   directory~\cite{3gpp_ts_2015-2,osmocombb_ms-side_????}.
     %}
@@ -474,11 +474,11 @@ sections~\cite{3gpp_ts_2014-2}.
     is shown through logs displayed on \fref{fig:pm}, \fref{fig:pm2},
     and \fref{fig:pm3}. The \gls{ms} will first measure the power level
     of all the neighboring cells, then try to synchronize to each of
-    them and read their system information messages, and finally deduce
+    them and read their System Information messages, and finally deduce
     the cell reselection parameters. These parameters are used to
     determine if a cell change is needed~\cite{3gpp_ts_2014-8}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{pm}
         \caption{Power measurements logs in \prog{mobile}: signal
@@ -486,7 +486,7 @@ sections~\cite{3gpp_ts_2014-2}.
         \label{fig:pm}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{pm2}
         \caption{Power measurements logs in \prog{mobile}: System
@@ -494,7 +494,7 @@ sections~\cite{3gpp_ts_2014-2}.
         \label{fig:pm2}
       \end{figure}
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{pm3}
         \caption{Power measurements logs in \prog{mobile}: reselection
@@ -519,7 +519,7 @@ sections~\cite{3gpp_ts_2014-2}.
     assignment procedure in the \prog{mobile} application is shown on
     \fref{fig:mobile_rach}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_rach}
         \caption{Immediate assignment procedure logs in \prog{mobile}}
@@ -536,7 +536,7 @@ sections~\cite{3gpp_ts_2014-2}.
     sends an Assignment failure instead. A successful procedure in the
     \prog{mobile} application is shown on \fref{fig:mobile_asscmd}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_asscmd}
         \caption{Dedicated channel assignment procedure logs in \prog{mobile}}
@@ -600,7 +600,7 @@ sections~\cite{3gpp_ts_2014-2}.
     Authentication Response message to the network. If it is not valid,
     the network sends an Authentication Reject message to the \gls{ms}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_mm}
         \caption{Identification, authentication, ciphering mode setting, and TMSI
@@ -625,7 +625,7 @@ sections~\cite{3gpp_ts_2014-2}.
     response is returned to the mobile station. This procedure is shown
     in the \prog{mobile} application on \fref{fig:mobile_detach}.
 
-      \begin{figure}[p]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_detach_s}
         \caption{IMSI detach procedure logs in \prog{mobile}}
@@ -659,7 +659,7 @@ sections~\cite{3gpp_ts_2014-2}.
   \prog{mobile} is shown on \fref{fig:mobile_loc_up} and
   \fref{fig:mobile_loc_acc}.
 
-    \begin{figure}[p]
+    \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{mobile_loc_up}
       \caption{IMSI attach procedure logs in \prog{mobile}: Location
@@ -667,7 +667,7 @@ sections~\cite{3gpp_ts_2014-2}.
       \label{fig:mobile_loc_up}
     \end{figure}
 
-    \begin{figure}[p]
+    \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{mobile_loc_acc}
       \caption{IMSI attach procedure logs in \prog{mobile}: Location
@@ -723,7 +723,7 @@ sections~\cite{3gpp_ts_2014-2}.
   Finally, the network \gls{mm} sublayer sends a Location Updating
   Accept message, and the connection is released.
 
-    \begin{figure}[h]
+    \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{flow_loc_upd}
       \caption{Location updating procedure flow
@@ -850,7 +850,7 @@ sections~\cite{3gpp_ts_2014-2}.
     sublayer releases the \gls{rr} connection, and finally the data link
     layer releases the data link connection.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{flow_mtc_setup}
         \caption{Mobile Terminated Call
@@ -858,7 +858,7 @@ sections~\cite{3gpp_ts_2014-2}.
         \label{fig:flow_mtc_setup}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{flow_moc_release}
         \caption{Mobile Originating Call
@@ -866,7 +866,7 @@ sections~\cite{3gpp_ts_2014-2}.
         \label{fig:flow_moc_release}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_mtc_setup}
         \caption{Mobile Terminated Call
@@ -874,7 +874,7 @@ sections~\cite{3gpp_ts_2014-2}.
         \label{fig:mobile_mtc_setup}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{mobile_mtc_release}
         \caption{Mobile Terminating Call
@@ -926,7 +926,7 @@ sections~\cite{3gpp_ts_2014-2}.
       \end{figure}
       \fi
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{osmocon}
         \caption{~\cite{osmocombb_osmocon}}

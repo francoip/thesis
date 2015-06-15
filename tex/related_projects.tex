@@ -3,8 +3,8 @@
 
     This chapter gives some context around the \proj{OsmocomBB} project
     and provides references to selected works on the same topic. It
-    shows that researches on \gls{gsm} security have been carried out
-    for a long time, and highlights its milestones.
+    shows that research on \gls{gsm} security have been carried out for
+    a long time, and highlights its milestones.
 
     \section{Nokia DCT3}
 
@@ -17,13 +17,13 @@
       One of the project exploiting this situation was \proj{Project
       Blacksphere} around 2003~\cite{project_????}. This project led to
       the creation of a series of tools which helped to debug \gls{gsm}
-      and created a community around it. One of them is \prog{Debug
-      Tracing}, which is provided in the \proj{Gammu} software when
-      using the \code{nokiadebug} argument. It provides very useful
-      debug traces that can also help understand how the network works.
-      For example, it is possible to receive most of the layer 2 and 3
-      messages that the phone processes. \name{Glendrange} et al.\
-      showed examples of results obtained using this
+      and created a community around it. One of these tools is
+      \prog{Debug Tracing}, which is provided in the \proj{Gammu}
+      software when using the \code{nokiadebug} argument. It provides
+      very useful debug traces that can also help understand how the
+      network works. For example, it is possible to receive most of the
+      layer 2 and 3 messages that the phone processes. \name{Glendrange}
+      et al.\ showed examples of results obtained using this
       software~\cite[p.~89]{glendrange_decoding_2010}.
 
       \prog{NetMonitor} is a hidden software available on some phones
@@ -54,7 +54,7 @@
 
     \section{THC projects}
 
-      \gls{thc} is a group of hacker which was active in the \gls{gsm}
+      \gls{thc} is a group of hackers which was active in the \gls{gsm}
       development community starting from the beginning of 2007. They
       introduced the \proj{GSM Software Project} and the \proj{A5
       Cracking Project} at the CCCamp in 2007~\cite{hulton_a5_2007}. The
@@ -102,9 +102,9 @@
 
       \gls{gsm} cryptography is based on a set of algorithm called the
       A5 cipher family. These algorithms have never been released
-      officially, but were partially leaked as soon as 1994 when
-      \name{Ross Anderson} received some incomplete documentation
-      \textquote{anonymously in two brown
+      officially to the public, but were partially leaked as soon as
+      1994 when \name{Ross Anderson} received some incomplete
+      documentation \textquote{anonymously in two brown
       envelopes}~\cite{anderson_a5_1994}. The A5/1 and A5/2 algorithms
       were completely reversed engineered by \name{Marc Briceno},
       \name{Ian Goldberg}, and \name{David Wagner} in 1999, and a
@@ -136,7 +136,7 @@
     \section{Berlin A5/1 rainbow table set and \proj{Kraken}}
     \label{sec:berlin}
 
-      The main problems with the projects described in the previous
+      The main problem with the projects described in the previous
       section were the centralized development and computation, which
       created a single point of failure. In August 2009, \name{Sascha
       Krißler} and \name{Karsten Nohl} introduced a new project at
@@ -179,7 +179,7 @@
       \name{Harald Welte}~\cite{welte_airprobe:_2009,airprobe_????}.
       This project is used to capture, demodulate and decode \gls{gsm}
       traffic using \gls{usrp} devices and \proj{GNU Radio}. The goal
-      again was to raise awareness about \gls{gsm} security.
+      was again to raise awareness about \gls{gsm} security.
 
       \proj{Airprobe} introduced a new tool to the \gls{thc} suite:
       \prog{gsm-receiver}. It was written by \name{Piotr Krysik} and,
@@ -199,9 +199,9 @@
       \proj{Airprobe} to parse the control data and extract the
       keystream, \proj{Kraken} to find the A5/1 session key, and
       \proj{Airprobe} again to decode the decrypted voice. To find some
-      keystream, known text has to be found as well. This is possible
-      since a lot of messages in \gls{gsm} are predictable, as was
-      already shown by \name{Karsten Nohl} and \name{Chris Paget} in
+      keystream, known plaintext has to be found as well. This is
+      possible since a lot of messages in \gls{gsm} are predictable, as
+      was already shown by \name{Karsten Nohl} and \name{Chris Paget} in
       2009~\cite[p.~19]{nohl_gsm:_2009}.
 
       Despite all these progresses, the \proj{Airprobe} community faced
@@ -225,5 +225,6 @@
       baseband chipset of a mobile phone. This makes it easier to
       analyze the received traffic, to send arbitrary data, and so on.
       Various applications are available to do so, and it is possible to
-      modify them and create new ones.
+      modify them and create new ones. This will be demonstrated in this
+      thesis.
 

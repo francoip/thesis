@@ -12,6 +12,7 @@
     and gather the data.
 
 \fi
+
   The goal of this chapter is, using \proj{OsmocomBB}, to take a look at
   the security configuration of Norwegian mobile network operators. The
   attacks introduced in~\Cref{chap:eavesdropping_attacks}
@@ -21,9 +22,13 @@
   The first section of this chapter is dedicated to practical
   considerations about the gathered data. The second section
   investigates the eavesdropping attack described
-  in~\Cref{chap:eavesdropping_attacks} by considering each assumption
-  it makes. The last section does the same for the \gls{dos} attacks
-  introduced in~\Cref{chap:dos_attacks}.
+  in~\Cref{chap:eavesdropping_attacks} by considering each assumption it
+  makes. The last section does the same for the \gls{dos} attacks
+  introduced in~\Cref{chap:dos_attacks}. Reproducing the measurements
+  can be done by following the tutorial found in \Sref{app:tuto} of the
+  appendices, and by refering to the related sections in these two
+  chapters.
+
 
   \section{Data gathering}
 
@@ -35,7 +40,7 @@
     extensive investigation. For an analysis on a larger scale, the
     \proj{GSM Map} project is interesting.
 
-    The \proj{GSM Map} project  aims to gather security configuration
+    The \proj{GSM Map} project aims to gather security configuration
     data samples submitted by volunteers from all over the world and to
     use it to assess mobile networks security. It creates automatically
     generated reports presenting this information and publish them
@@ -96,7 +101,7 @@
       option. The output of the Web Client available on this service is
       displayed on~\fref{fig:hlr_lookup}.
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=.7\textwidth]{hlr_lookups_both}
         \caption{Result of an HLR query, displaying the IMSI on the
@@ -228,14 +233,14 @@
         \label{tab:silent_sms_traffic}
       \end{table}
 
-      \begin{figure}[t]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{silent_sms_tx}
         \caption{Sent TP-PID and TP-DCS fields from \comp{Netcom}}
         \label{fig:silent_sms_tx}
       \end{figure}
 
-      \begin{figure}[t]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{silent_sms_rx}
         \caption{The received TP-PID and TP-DCS fields on
@@ -364,7 +369,7 @@
         \label{tab:events_tmsi_reallocation}
       \end{table}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{tmsi_real}
         \caption{TMSI reallocation and rekeying during an MT-SMS on \comp{Telenor}}
@@ -462,16 +467,20 @@
       \end{table}
 
       The \comp{Telenor} network randomizes the empty frames, except for
-      the last byte which is always set to \code{0x2B} in the empty frames
-      after the Ciphering Mode Command message. The SI6 messages padding
-      is randomized, but it stays the same for two or three messages
-      before changing. Anyway, most of the information contained in the
-      System Information messages is constant and is thus a great source
-      of known plaintext. A solution would be to randomize the pattern
-      with which the System Information messages are sent, but this is
-      not done in this case. Therefore, it is easy to know which
-      encrypted message contains a SI5 for example, and it is also easy
-      to know what this message contains.
+      the last byte which is always set to \code{0x2B} in the empty
+      frames after the Ciphering Mode Command message. The SI6 messages
+      padding is randomized, but it stays the same for two or three
+      messages before changing. Anyway, most of the information
+      contained in the System Information messages is constant and is
+      thus a great source of known plaintext. A solution would be to
+      randomize the pattern with which the System Information messages
+      are sent, but this is not done in this case. Therefore, it is easy
+      to know which encrypted message contains a SI5 for example, and it
+      is also easy to know what this message contains. An application
+      was implemented in this thesis to extract keystream based on the
+      knowledge of the System Information messages pattern. This is
+      explained in more details in \Sref{sec:keystream_and_kraken} and
+      in \Sref{app:keystream} of the appendices. 
       
       The \comp{Netcom} network randomizes most of the empty frames
       padding, but some of them are still padded with the \code{0x2B}
@@ -479,10 +488,10 @@
       and this is shown on~\fref{fig:netcom_padding}. Most importantly,
       the System Information message pattern is not randomized, and this
       can be seen on~\fref{fig:netcom_dl_sacch} which displays the
-      downlink \gls{sacch} on a \comp{Netcom} cell. This makes the SI5
-      message a good target. It it thus easy to find known plaintext on
-      Norwegian networks, and these observations are consistent with the
-      information found in the \proj{GSM Map} project report.
+      downlink \gls{sacch} on a \comp{Netcom} cell. It it thus easy to
+      find known plaintext on Norwegian networks, and these observations
+      are consistent with the information found in the \proj{GSM Map}
+      project report.
 
       \begin{figure}
         \centering
@@ -551,7 +560,7 @@
       algorithm to use based on the phone capabilities, and sends its
       decision in the Ciphering Mode Command message.
 
-      \begin{figure}[h]
+      \begin{figure}[p]
         \centering
         \includegraphics[width=\textwidth]{mobile_encryption}
         \caption{Setting the advertised encryption support using the patched
@@ -581,30 +590,32 @@
       Reject message is \emph{network failure}. Both networks still
       allow the use of A5/1 when the phone requests it, and both use
       A5/3 when the phone advertises its support. This is shown on
-      \fref{fig:netcom_a51} and \fref{fig:netcom_a53}. This is
-      consistent with the data provided by the \proj{GSM Map} project.
+      \fref{fig:netcom_a5}, and is consistent with the data provided by
+      the \proj{GSM Map} project.
 
-      \begin{figure}
+      \begin{figure}[p]
         \centering
         \includegraphics[width=\textwidth]{telenor_a52}
         \caption{Location Updating Reject when \gls{ms} does not
-        advertises A5/1 support on \comp{Telenor}}
+        advertises A5/1 or A5/3 support on \comp{Telenor}}
         \label{fig:telenor_a52}
       \end{figure}
 
-      \begin{figure}
+      \begin{figure}[p]
         \centering
-        \includegraphics[width=\textwidth]{netcom_a51}
-        \caption{Ciphering Mode Command with A5/1 on \comp{Netcom}}
-        \label{fig:netcom_a51}
+        \includegraphics[width=\textwidth]{netcom_a5}
+        \caption{Ciphering Mode Command with A5/1 and A5/3 on \comp{Netcom}}
+        \label{fig:netcom_a5}
       \end{figure}
 
+      \iffalse
       \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{netcom_a53}
         \caption{Ciphering Mode Command with A5/3 on \comp{Netcom}}
         \label{fig:netcom_a53}
       \end{figure}
+      \fi
 
       \iffalse
       While \comp{Netcom} asks the \gls{ms} for its capabilities on
@@ -689,11 +700,10 @@
       the command displayed on \fref{fig:mobile_dos_detach}.\fxnote{Need
       to test during a call.}
 
-      \begin{figure}[h]
+      \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{telenor_detach}
-        \caption{IMSI Detach Indication message with an IMSI of
-        242011234567890 on \comp{Telenor}}
+        \caption{IMSI Detach Indication message with fake IMSI on \comp{Telenor}}
         \label{fig:telenor_detach}
       \end{figure}
 
