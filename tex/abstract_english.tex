@@ -1,35 +1,18 @@
 \pagestyle{empty}
 \begin{abstract}
-
-
 This thesis analyzes the security of Norwegian GSM and GPRS networks
-using the OsmocomBB project and considering two types of attacks: an
-eavesdropping attack, and a set of Denial-of-Service attacks. OsmocomBB
-aims to create a free and open source GSM baseband software
-implementation. Doing so, it enhances cheap and accessible compatible
-phones by giving access to their inner workings. The eavesdropping
-attack was presented at the 27th Chaos Communication Congress by Silvain
-Munaut and Karsten Nohl. The set of Denial-of-Service attacks is
-composed of: the RACH flood attack, the IMSI attach flood attack, the
-IMSI detach attack, and an attack based on race conditions in the paging
-process.
+using the OsmocomBB project, which aims to create a free and open source
+GSM baseband software implementation. OsmocomBB was used to understand
+the GSM system, and to understand and implement two types of attacks.
+The first one is an eavesdropping attack, and the second one is a set of
+Denial-of-Service attacks: the RACH flood attack, the IMSI attach flood
+attack, the IMSI detach attack, and an attack based on race conditions
+in the paging process.
 
-This thesis first introduces the projects which are related to
-\proj{OsmocomBB}, and offers a guide into the GSM system by linking the
-specifications with the \proj{OsmocomBB} source code. Then, it describes
-the eavesdropping and Denial-of-Service attacks in details. Some steps
-of the eavesdropping attack as well as the first three Denial-of-Service
-attacks are implemented. Finally, the results of measurements and
-experiments conducted on Norwegian networks to assess the feasibility of
-the attacks are presented.
-
-It was found that both \comp{Telenor} and \comp{Netcom} seem protected
-from the eavesdropping attack, since they renegotiate a TMSI for each
-service and provide the A5/3 encryption algorithm. The IMSI detach
-attack was the only Denial-of-Service attack tested on these networks,
-since it targets a single user. It is effective on the Telenor network,
-but not on the Netcom network. The other Denial-of-Service attacks are
-probably effective, but were not tested since they could damage the
-networks.
-
+The feasibility of these attacks on Norwegian networks was assessed. It
+was found that both \comp{Telenor} and \comp{Netcom} seem protected from
+the eavesdropping attack. The IMSI detach attack is effective on
+\comp{Telenor}, but not on \comp{Netcom}. The other Denial-of-Service
+attacks are probably effective, but were not tested since they could
+damage the networks.
 \end{abstract}
