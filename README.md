@@ -1,10 +1,11 @@
 GSM and GPRS Security Using OsmocomBB, NTNU, Trondheim, Norway.
 
-Author:                 François Pönsgen
-Responsible professor:  Stig F. Mjølsnes, ITEM (NTNU)
-Supervisor at ULB:      Jean-Michel Dricot, OPERA (ULB)
+Author:                 François Pönsgen  
+Responsible professor:  Stig F. Mjølsnes, ITEM (NTNU)  
+Supervisor at ULB:      Jean-Michel Dricot, OPERA (ULB)  
 
-Abstract:
+
+Abstract:  
 This thesis analyzes the security of Norwegian GSM and GPRS net-
 works using the OsmocomBB project, which aims to create a free and
 open source GSM baseband software implementation. OsmocomBB was
