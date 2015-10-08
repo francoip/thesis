@@ -6,8 +6,8 @@ Supervisor at ULB:      Jean-Michel Dricot, OPERA (ULB)
 
 
 Abstract:  
-This thesis analyzes the security of Norwegian GSM and GPRS net-
-works using the OsmocomBB project, which aims to create a free and
+This thesis analyzes the security of Norwegian GSM and GPRS networks
+using the OsmocomBB project, which aims to create a free and
 open source GSM baseband software implementation. OsmocomBB was
 used to understand the GSM system, and to understand and implement
 two types of attacks. The first one is an eavesdropping attack, and the
