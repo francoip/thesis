@@ -19,3 +19,5 @@ It was found that both Telenor and Netcom seem protected from the
 eavesdropping attack. The IMSI detach attack is effective on Telenor,
 but not on Netcom. The other Denial-of-Service attacks are probably
 effective, but were not tested since they could damage the networks.
+
+Public repository: https://gitlab.com/francoip/thesis
