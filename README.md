@@ -20,4 +20,5 @@ eavesdropping attack. The IMSI detach attack is effective on Telenor,
 but not on Netcom. The other Denial-of-Service attacks are probably
 effective, but were not tested since they could damage the networks.
 
+NTNU download: https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2352780
 Public repository: https://gitlab.com/francoip/thesis
